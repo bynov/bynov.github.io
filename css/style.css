@@ -1,0 +1,241 @@
+/* Reset and base styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #212121;
+    --text-color: #dadada;
+    --link-color: #6ab0de;
+    --link-hover-color: #89c3e8;
+    --muted-color: #909090;
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+/* Header */
+header {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.site-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-title a:hover {
+    color: var(--link-color);
+}
+
+/* Navigation */
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--link-color);
+    border-bottom-color: var(--link-color);
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* Home page - Profile section */
+.profile {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 4px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.avatar:hover {
+    border-color: var(--link-color);
+}
+
+.profile h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.profile .tagline {
+    font-size: 1.3rem;
+    color: var(--muted-color);
+    margin-bottom: 2rem;
+}
+
+/* Social links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.social-link:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(106, 176, 222, 0.3);
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Skills page */
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skills-list li {
+    background-color: var(--card-bg);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.skills-list li:hover {
+    border-color: var(--link-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(106, 176, 222, 0.2);
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .profile h1 {
+        font-size: 2rem;
+    }
+
+    .profile .tagline {
+        font-size: 1.1rem;
+    }
+
+    .avatar {
+        width: 140px;
+        height: 140px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+}
