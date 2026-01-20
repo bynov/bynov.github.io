@@ -8,6 +8,15 @@
     <meta name="author" content="Alexey Vilenskiy">
     <title>Skills - Alexey Vilenskiy</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <header>
@@ -46,8 +55,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Alexey Vilenskiy. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Alexey Vilenskiy. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
